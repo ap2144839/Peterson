@@ -11,7 +11,7 @@
   <title>This is my first project</title>
 </head>
 <body>
-<p>Hello world</p>
+<p>Hi</p>
   <input type="text" size = 30>
   <input type = "button" value = "Confirm">
 </body>
