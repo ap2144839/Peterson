@@ -1,8 +1,8 @@
 package com.peterson.util;
 
 import com.peterson.collection.WorkWithArrayList;
-
 import java.util.ArrayList;
+import java.util.List;
 
 //import static com.peterson.collection.WorkWithArrayList.*;
 
@@ -13,114 +13,76 @@ import java.util.ArrayList;
 public class Util {
     public static void main(String args[]){
 
-        //CREATING ARRAYLIST EXPERIMENT---------------------------------------------------------------------------------
-        //Total time of ArrayList creation consisting of 100 elements
-        int i = 100;
-        long startTime = System.currentTimeMillis();
-        WorkWithArrayList workwitharraylist2 = new WorkWithArrayList();
-        ArrayList list = workwitharraylist2.fillList(i);
-        long stopTime = System.currentTimeMillis();
-        System.out.println("Total time of ArrayList creation: " + (stopTime - startTime) + " milliseconds for " + i + " elements");
+        //FILLING AND DELETING EXPERIMENT FROM ARRAYLIST OF 100 ELEMENTS------------------------------------------------
+        //Filling ArrayList of 100 elements
+        WorkWithArrayList workWithArrayList = new WorkWithArrayList();
+        List<Integer> arrayList1 = new ArrayList<>();
+        long start = System.currentTimeMillis();
+        List<Integer> list1 = workWithArrayList.fillList(arrayList1, 100);
+        long stop = System.currentTimeMillis();
+        System.out.println("Filling ArrayList of 100 elements takes: " + (stop-start) + " ms");
+        //Deleting last element from ArrayList of 100 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list1, 99);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting last element from ArrayList of 100 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from ArrayList of 100 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list1, 50);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting middle element from ArrayList of 100 elements takes: " + (stop-start) + " ms");
+        //Deleting first element from ArrayList of 100 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list1, 0);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting first element from ArrayList of 100 elements takes: " + (stop-start) + " ms");
 
-        //Total time of ArrayList creation consisting of 1000 elements
-        i = 1000;
-        startTime = System.currentTimeMillis();
-        WorkWithArrayList workwitharraylist3 = new WorkWithArrayList();
-        list = workwitharraylist3.fillList(i);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of ArrayList creation: " + (stopTime - startTime) + " milliseconds for " + i + " elements");
+        //FILLING AND DELETING EXPERIMENT FROM ARRAYLIST OF 1,000 ELEMENTS----------------------------------------------
+        //Filling ArrayList of 1,000 elements
+        List<Integer> arrayList2 = new ArrayList<>();
+        start = System.currentTimeMillis();
+        List<Integer> list2 = workWithArrayList.fillList(arrayList2, 1000);
+        stop = System.currentTimeMillis();
+        System.out.println("Filling ArrayList of 1,000 elements takes: " + (stop-start) + " ms");
+        //Deleting last element from ArrayList of 1,000 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list2, 999);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting last element from ArrayList of 1,000 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from ArrayList of 1,000 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list2, 500);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting middle element from ArrayList of 1,000 elements takes: " + (stop-start) + " ms");
+        //Deleting first element from ArrayList of 1,000 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list2, 0);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting first element from ArrayList of 1,000 elements takes: " + (stop-start) + " ms");
 
-        //Total time of ArrayList creation consisting of 1 000 000 elements
-        i = 1000000;
-        startTime = System.currentTimeMillis();
-        WorkWithArrayList workwitharraylist6 = new WorkWithArrayList();
-        list = workwitharraylist6.fillList(i);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of ArrayList creation: " + (stopTime - startTime) + " milliseconds for " + i + " elements");
+        //FILLING AND DELETING EXPERIMENT FROM ARRAYLIST OF 1,000,000 ELEMENTS------------------------------------------
+        //Filling ArrayList of 1,000,000 elements
+        List<Integer> arrayList3 = new ArrayList<>();
+        start = System.currentTimeMillis();
+        List<Integer> list3 = workWithArrayList.fillList(arrayList3, 1000000);
+        stop = System.currentTimeMillis();
+        System.out.println("Filling ArrayList of 1,000,000 elements takes: " + (stop-start) + " ms");
+        //Deleting last element from ArrayList of 1,000,000 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list3, 999999);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting last element from ArrayList of 1,000,000 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from ArrayList of 1,000,000 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list3, 500000);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting middle element from ArrayList of 1,000,000 elements takes: " + (stop-start) + " ms");
+        //Deleting first element from ArrayList of 1,000,000 elements
+        start = System.currentTimeMillis();
+        workWithArrayList.deleteElementList(list3, 0);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting first element from ArrayList of 1,000,000 elements takes: " + (stop-start) + " ms");
 
-        /**
-        //Total time of ArrayList creation consisting of 1 000 000 000 elements
-        //throws Exception java.lang.OutOfMemoryError: Java heap space
-        i = 1000000000;
-        startTime = System.currentTimeMillis();
-        WorkWithArrayList workwitharraylist9 = new WorkWithArrayList();
-        list = workwitharraylist9.fillList(i);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of ArrayList creation: " + (stopTime - startTime) + " miliseconds for " + i + " elements");
-        */
-
-        //ONE ELEMENT DELETING EXPERIMENT FROM ARRAYLIST---------------------------------------------------------------
-        //Total time of last element deleting from ArrayList consisting of 100 elements
-        i = 100;
-        startTime = System.currentTimeMillis();
-        workwitharraylist2.deleteElementList(workwitharraylist2, i-1);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of last element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of last element deleting from ArrayList consisting of 1 000 elements
-        i = 1000;
-        startTime = System.currentTimeMillis();
-        workwitharraylist3.deleteElementList(workwitharraylist3, i-1);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of last element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of last element deleting from ArrayList consisting of 1 000 elements
-        i = 1000000;
-        startTime = System.currentTimeMillis();
-        workwitharraylist6.deleteElementList(workwitharraylist6, i-1);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of last element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of first element deleting from ArrayList consisting of 100 elements
-        i = 100;
-        startTime = System.currentTimeMillis();
-        workwitharraylist2.deleteElementList(workwitharraylist2, 0);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of first element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of first element deleting from ArrayList consisting of 1 000 elements
-        i = 1000;
-        startTime = System.currentTimeMillis();
-        workwitharraylist3.deleteElementList(workwitharraylist3, 0);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of first element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of first element deleting from ArrayList consisting of 1 000 elements
-        i = 1000000;
-        startTime = System.currentTimeMillis();
-        workwitharraylist6.deleteElementList(workwitharraylist6, 0);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of first element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of middle element deleting from ArrayList consisting of 100 elements
-        i = 100;
-        startTime = System.currentTimeMillis();
-        workwitharraylist2.deleteElementList(workwitharraylist2, 50);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of middle element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of middle element deleting from ArrayList consisting of 1 000 elements
-        i = 1000;
-        startTime = System.currentTimeMillis();
-        workwitharraylist3.deleteElementList(workwitharraylist3, 500);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of middle element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
-
-        //Total time of middle element deleting from ArrayList consisting of 1 000 elements
-        i = 1000000;
-        startTime = System.currentTimeMillis();
-        workwitharraylist6.deleteElementList(workwitharraylist6, 500000);
-        stopTime = System.currentTimeMillis();
-        System.out.println("Total time of middle element deleting from ArrayList consisting of " + i + " elements: "
-                + (stopTime - startTime) + " milliseconds");
 
     }
 
