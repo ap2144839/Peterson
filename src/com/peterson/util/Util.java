@@ -2,9 +2,9 @@ package com.peterson.util;
 
 import com.peterson.collection.WorkWithList;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
+
+import com.peterson.collection.WorkWithHashSet;
 
 /**
  * Created by user on 23.05.2018.
@@ -151,6 +151,74 @@ public class Util {
         WorkWithList.deleteElementList(list6, 0);
         stop = System.currentTimeMillis();
         System.out.println("Deleting first element from LinkedList of 1,000,000 elements takes: " + (stop-start) + " ms");
+
+        //HashSet====================================================================================================
+        //FILLING AND DELETING EXPERIMENT FROM HASHSET OF 100 ELEMENTS-----------------------------------------------
+        //Filling HashSet of 100 elements
+        HashSet<Integer> hashSet1 = new HashSet<>();
+        start = System.currentTimeMillis();
+        HashSet<Integer> workWithHashSet1 = WorkWithHashSet.fillList(hashSet1, 100);
+        stop = System.currentTimeMillis();
+        System.out.println("Filling HashSet of 100 elements takes: " + (stop-start) + " ms");
+        //Deleting last element from HashSet of 100 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet1,99);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting last element from HashSet of 100 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from HashSet of 100 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet1,50);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting middle element from HashSet of 100 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from HashSet of 100 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet1,0);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting first element from HashSet of 100 elements takes: " + (stop-start) + " ms");
+        //FILLING AND DELETING EXPERIMENT FROM HASHSET OF 1,000 ELEMENTS-----------------------------------------------
+        //Filling HashSet of 1,000 elements
+        HashSet<Integer> hashSet2 = new HashSet<>();
+        start = System.currentTimeMillis();
+        HashSet<Integer> workWithHashSet2 = WorkWithHashSet.fillList(hashSet2, 1000);
+        stop = System.currentTimeMillis();
+        System.out.println("Filling HashSet of 1,000 elements takes: " + (stop-start) + " ms");
+        //Deleting last element from HashSet of 1,000 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet2,999);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting last element from HashSet of 1,000 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from HashSet of 1,000 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet2,500);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting middle element from HashSet of 1,000 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from HashSet of 1,000 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet2,0);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting first element from HashSet of 1,000 elements takes: " + (stop-start) + " ms");
+        //FILLING AND DELETING EXPERIMENT FROM HASHSET OF 1,000,000 ELEMENTS-----------------------------------------------
+        //Filling HashSet of 1,000,000 elements
+        HashSet<Integer> hashSet3 = new HashSet<>();
+        start = System.currentTimeMillis();
+        HashSet<Integer> workWithHashSet3 = WorkWithHashSet.fillList(hashSet3, 1000000);
+        stop = System.currentTimeMillis();
+        System.out.println("Filling HashSet of 1,000,000 elements takes: " + (stop-start) + " ms");
+        //Deleting last element from HashSet of 1,000,000 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet3,999999);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting last element from HashSet of 1,000,000 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from HashSet of 1,000,000 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet3,500000);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting middle element from HashSet of 1,000,000 elements takes: " + (stop-start) + " ms");
+        //Deleting middle element from HashSet of 1,000,000 elements
+        start = System.currentTimeMillis();
+        WorkWithHashSet.deleteElementHashSet(workWithHashSet3,0);
+        stop = System.currentTimeMillis();
+        System.out.println("Deleting first element from HashSet of 1,000,000 elements takes: " + (stop-start) + " ms");
 
     }
 
