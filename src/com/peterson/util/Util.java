@@ -16,12 +16,20 @@ public class Util {
         return col;
     }
 
-    public static void deleteObject(Collection<Integer> collection, Object o){
+    public static void deleteObject(List<Integer> collection, int i){
+        long start = System.currentTimeMillis();
+        WorkWithCollection.deleteElement(collection, i);
+        long stop = System.currentTimeMillis();
+        System.out.println(String.format("Deleting element %d from Collection takes: %d", i, (stop-start)));
+    }
+
+    public static void deleteObject(HashSet<Integer> collection, Object o){
         long start = System.currentTimeMillis();
         WorkWithCollection.deleteElement(collection, o);
         long stop = System.currentTimeMillis();
         System.out.println(String.format("Deleting element %s from Collection takes: %d", o.toString(), (stop-start)));
     }
+
 
     public static void main(String args[]){
 

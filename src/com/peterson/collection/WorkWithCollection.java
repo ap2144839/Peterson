@@ -1,6 +1,8 @@
 package com.peterson.collection;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
 
 /**
  * Created by user on 21.05.2018.
@@ -14,8 +16,10 @@ public class WorkWithCollection {
         return list;
     }
 
-    public static void deleteElement(Collection<Integer> list, Object o){
-        list.remove(o);
+    public static void deleteElement(List<Integer> list, int i) { list.remove(i); }
+
+    public static void deleteElement(HashSet<Integer> hashSet, Object o){
+        hashSet.remove(o);
     }
 
 }
