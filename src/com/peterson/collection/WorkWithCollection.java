@@ -1,25 +1,19 @@
 package com.peterson.collection;
 
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
 
 /**
  * Created by user on 21.05.2018.
  */
-public class WorkWithCollection {
-
-    public static Collection<Integer> fillList(Collection<Integer> list, int size){
+public abstract class WorkWithCollection {
+    //It may be necessary to change the variable name: list -> collection
+    public static Collection<Integer> fillList(Collection<Integer> collection, int size){
         for (int i = 0; i < size; i++){
-            list.add(i);
+            collection.add(i);
         }
-        return list;
+        return collection;
     }
 
-    public static void deleteElement(List<Integer> list, int i) { list.remove(i); }
-
-    public static void deleteElement(HashSet<Integer> hashSet, Object o){
-        hashSet.remove(o);
-    }
+    public abstract void deleteElement(Collection<Integer> list, Object o);
 
 }
